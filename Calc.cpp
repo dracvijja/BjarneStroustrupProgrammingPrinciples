@@ -42,6 +42,8 @@ public:
         : name(n), value(v) {}
 }
 //--------------------------------------------------------------------------------
+vector<Variable>var_table;
+//--------------------------------------------------------------------------------
 
 class Token {
 public:
@@ -68,7 +70,7 @@ private:
 
 //------------------------------------------------------------------------------
 
-// The constructor just sets full to indicate that the buffer is empty:
+// The constructor just s full to indicate that the buffer is empty:
 Token_stream::Token_stream()
 :full(false), buffer(0)    // no Token in buffer
 {
@@ -257,7 +259,36 @@ double expression()
         }
     }
 }
+//-----------------------------------------------------------------------------
+double get_value(string s){
+    for(int i=0; i<var_table; i++)
+        if(var_table[i].name==s) return var_table[i].value
+    error("get: undefines variable ", s);
+}
 
+void set_value(string s, double d){
+    for(int i=0; i<var_table.size(); i++){
+        if(var_table[i].name == s){}
+            var_table[i].value = d;
+            return;
+        }
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+        error("set: undefined variable ", s);
+    }
+}
 //------------------------------------------------------------------------------
 void clean_up_mess(){
     ts.ignore(print);
