@@ -99,7 +99,7 @@ template< class T> struct Vector : public std::vector<T> {
 
 // trivially range-checked string (no iterator checking):
 struct String : std::string {
-	
+
 	String() { }
 	String(const char* p) :std::string(p) {}
 	String(const string& s) :std::string(s) {}
@@ -198,7 +198,7 @@ inline void keep_window_open(string s)
 
 
 // error function to be used (only) until error() is introduced in Chapter 5:
-inline void simple_error(string s)	// write ``error: s?? and exit program
+inline void simple_error(string s)	// write ``error: s�� and exit program
 {
 	cerr << "error: " << s << '\n';
 	keep_window_open();		// for some Windows environments
