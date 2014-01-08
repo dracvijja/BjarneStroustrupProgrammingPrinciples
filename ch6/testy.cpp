@@ -5,9 +5,9 @@
 int main()
 try
 {
-       char a = '1233';
-       if(isdigit(a)) cout <
-       else cout << "little lamb sucks dicks";
+    string s = "TooLoWeR";
+
+    cout << c;
 
 }
 catch (exception& e) {

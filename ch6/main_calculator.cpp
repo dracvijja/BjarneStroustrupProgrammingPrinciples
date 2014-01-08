@@ -128,15 +128,21 @@ Token Token_stream::get()
         // get input with cin.ger(), if it is a char or a digit, append to s
         // return decleration key if s is "let"
             if (isalpha(ch)) {
-			string s;
+			string s,lcase_s;
 			s += ch;
-			while(cin.get(ch) && (isalpha(ch) || isdigit(ch))) s+=ch;
+			lcase_s += ch;
+			while(cin.get(ch) && (isalpha(ch) || isdigit(ch))){ s+=ch; lcase_s+=ch;}
 			cin.putback(ch);
-			if (s == declkey) return Token(let);
 
-			if (s == sqrtkey) return Token(sqrtsymb);
+			for(int i=0; i<lcase_s.size(); i++){
+                lcase_s[i] = tolower(lcase_s[i]);
 
-			if (s == powkey) return Token(powsymb);
+            }
+			if (lcase_s == declkey) return Token(let);
+
+			if (lcase_s == sqrtkey) return Token(sqrtsymb);
+
+			if (lcase_s == powkey) return Token(powsymb);
 
 			return Token(name,s);
 		}
