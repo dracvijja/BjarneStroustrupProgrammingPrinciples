@@ -1,23 +1,23 @@
+#include <iostream>
+using namespace std;
 
+string Palindrome(string str) {
+    string s = str;
+    for(int i=0; i<s.size(); i++){
+        if(isupper(s[i]))
+            s[i]=tolower(s[i]);
+        else
+            s[i]=toupper(s[i]);
+    }
+    return s;
 
-#include "../std_lib_facilities.h"
-
-int main()
-try
-{
-    string s = "TooLoWeR";
-
-    cout << c;
 
 }
-catch (exception& e) {
-    cerr << "error: " << e.what() << '\n';
-    //keep_window_open("~~");
-    return 1;
-}
-catch (...) {
-    cerr << "Oops: unknown exception!\n";
-    keep_window_open("~~");
-    return 2;
-}
 
+int main() {
+
+  // keep this function call here
+  string s = "aCv e _-DdW";
+  cout << Palindrome(s);
+  return 0;
+}
